@@ -36,7 +36,7 @@ public class TicTacToeGame {
         System.out.println(board[4] +" | "+ board[5] + " | " + board[6]);
         System.out.println("----------");
         System.out.println(board[7] +" | "+ board[8] + " | " + board[9]);
-        System.out.println("********************************************");
+        System.out.println("***********************************************");
     }
 	
     static void userInput(){
@@ -74,10 +74,10 @@ public class TicTacToeGame {
     static void firstToStartGame() {
         int toss = (int) (Math.random() * 10) % 2;
         if (toss == 0) {
-            System.out.println("Computer starts the play first.");
+            System.out.println("Computer is starting the game.");
                 computerInput();
         } else {
-            System.out.println("Player starts the game.");
+            System.out.println("Player is starting the game.");
             userInput();
         }
     }
