@@ -54,14 +54,40 @@ public class TicTacToeGame {
             System.out.println("Its not Empty");
             userInput();
         }
-        
+        System.out.println("Computers chance: ");
+        computerInput();
+    }
+    
+    static void computerInput(){
+        int computerMove = (int) (Math.random() * 9 + 1);
+        if(board[computerMove] == ' '){
+        	System.out.println("Computer chooses : " + computerMove);
+            board[computerMove] = computerSymbol;
+        }else{
+            computerInput();
+        }
+        showBoard();
+        System.out.println("Player chance: ");
+        userInput();
+    }
+    
+    static void firstToStartGame() {
+        int toss = (int) (Math.random() * 10) % 2;
+        if (toss == 0) {
+            System.out.println("Computer starts the play first.");
+                computerInput();
+        } else {
+            System.out.println("Player starts the game.");
+            userInput();
+        }
     }
 	
 	public static void main(String[] args) {
 		createBoard();
 		assignSymbol();
 		showBoard();
-		userInput();
+		firstToStartGame();
+		
 	}
 
 }
